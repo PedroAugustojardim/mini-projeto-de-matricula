@@ -20,13 +20,11 @@ data class Formacao(val nome: String, var conteudos: List<ConteudoEducacional>, 
     }
 }
     fun ListaDeConteudo(){
-        
-        
-    }
+        for(cont in conteudos){
+        println("${cont.nome} - ${cont.duracao}")
+        }
+    } 
 
-fun main() {
-    TODO("Analise as classes modeladas para este domínio de aplicação e pense em formas de evoluí-las.")
-    TODO("Simule alguns cenários de teste. Para isso, crie alguns objetos usando as classes em questão.")
-    
-    
- }
+fun main(){
+} 
+
