@@ -26,5 +26,15 @@ data class Formacao(val nome: String, var conteudos: List<ConteudoEducacional>, 
     } 
 
 fun main(){
-} 
+    
+    val ProgramacaoExterna = ConteudoEducacional("Programação Externa")
+    val DesignDeSoftware = ConteudoEducacional("Design de Software")
+    
+    	val ListaConteudo = mutableListOf<ConteudoEducacional>()
+    
+    ListaConteudo.add(ProgramacaoExterna)
+    ListaConteudo.add(DesignDeSoftware)
+    
+    println("Estas são as matérias disponiveis ${ListaConteudo}") 
+}
 
