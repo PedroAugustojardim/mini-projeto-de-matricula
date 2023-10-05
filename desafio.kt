@@ -17,13 +17,9 @@ data class Formacao(val nome: String, var conteudos: List<ConteudoEducacional>, 
     fun ListaInscritos() {
         for(Inscrito in inscritos){
         println(Inscrito.nome)
-    }
-}
-    fun ListaDeConteudo(){
-        for(cont in conteudos){
-        println("${cont.nome}")
-        }
-    } 
+   	 	}
+	}
+   
 }
 fun main() {
      
@@ -34,9 +30,22 @@ fun main() {
     
     ListaConteudo.add(programacaoExterna)
     ListaConteudo.add(designDeSoftware)
-
-    println("Estas são as matérias disponiveis ${ListaConteudo.map{it.nome}}") 
-    println("Inscritos na formação:  ")
-}
     
+    val formacao = Formacao("Minha Formação", ListaConteudo, Nivel.AVANCADO)
+
+    val usuario1 = Usuario("João")
+    val usuario2 = Usuario("Anny")
+
+    formacao.Matricular(usuario1, usuario2)
+    
+   val matricula1 = Formacao("João", ListaConteudo, Nivel.AVANCADO)
+   val matricula2 = Formacao("Anny", ListaConteudo, Nivel.INTERMEDIARIO)
+
+    println("Estas são as matérias escolhidas por ${ListaConteudo.map{it.nome}}") 
+    println("Inscritos na formação:")
+     formacao.ListaInscritos()
+    println("${matricula1}")
+    println("${matricula2}")
+    
+}
 
