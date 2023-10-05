@@ -21,20 +21,22 @@ data class Formacao(val nome: String, var conteudos: List<ConteudoEducacional>, 
 }
     fun ListaDeConteudo(){
         for(cont in conteudos){
-        println("${cont.nome} - ${cont.duracao}")
+        println("${cont.nome}")
         }
     } 
+}
+fun main() {
+     
+    val programacaoExterna = ConteudoEducacional("Programação Externa")
+    val designDeSoftware = ConteudoEducacional("Design de Software")
 
-fun main(){
-    
-    val ProgramacaoExterna = ConteudoEducacional("Programação Externa")
-    val DesignDeSoftware = ConteudoEducacional("Design de Software")
-    
     	val ListaConteudo = mutableListOf<ConteudoEducacional>()
     
-    ListaConteudo.add(ProgramacaoExterna)
-    ListaConteudo.add(DesignDeSoftware)
-    
-    println("Estas são as matérias disponiveis ${ListaConteudo}") 
+    ListaConteudo.add(programacaoExterna)
+    ListaConteudo.add(designDeSoftware)
+
+    println("Estas são as matérias disponiveis ${ListaConteudo.map{it.nome}}") 
+    println("Inscritos na formação:  ")
 }
+    
 
